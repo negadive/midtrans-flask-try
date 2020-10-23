@@ -75,7 +75,10 @@ def simple_checkout():
 
 @app.route('/notif', methods=["POST"])
 def receive_notif():
-    print(request.data)
+    data = request.data
+    app.logger.warning(f"{data}")
+
+    return jsonify(data)
 
 #==============#
 # Run Flask app
