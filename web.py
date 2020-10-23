@@ -1,9 +1,14 @@
 import datetime
 import json
-from flask import Flask, render_template, request, jsonify
-from secret import SERVER_KEY, CLIENT_KEY
+# from secret import SERVER_KEY, CLIENT_KEY
+import os
 
-from midtransclient import Snap, CoreApi
+from flask import Flask, jsonify, render_template, request
+from midtransclient import CoreApi, Snap
+
+SERVER_KEY=os.environ['SERVER_KEY']
+CLIENT_KEY=os.environ['CLIENT_KEY']
+
 
 app = Flask(__name__)
 
