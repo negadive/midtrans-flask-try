@@ -73,6 +73,10 @@ def simple_checkout():
         client_key = snap.api_config.client_key,
         transaction=transaction)
 
+@app.route('/notif', methods=["POST"])
+def receive_notif():
+    print(request.data)
+
 #==============#
 # Run Flask app
 #==============#
