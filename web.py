@@ -80,6 +80,32 @@ def receive_notif():
 
     return jsonify(data)
 
+@app.route('/notif/recurr', methods=["POST"])
+def recurr_notif():
+    data = request.json
+    app.logger.warning(f"{data}")
+
+    return jsonify(data)
+
+# @app.route('/notif/recurr', methods=["POST"])
+# def recurr_notif():
+#     data = request.json
+#     app.logger.warning(f"{data}")
+
+#     return jsonify(data)
+
+@app.route('/finish')
+def finish_redir():
+    return render_template('finish.html')
+
+@app.route('/unfinish')
+def unfinish_redir():
+    return render_template('unfinish.html')
+
+@app.route('/error')
+def error_redir():
+    return render_template('error.html')
+
 #==============#
 # Run Flask app
 #==============#
