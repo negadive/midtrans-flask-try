@@ -75,7 +75,7 @@ def simple_checkout():
 
 @app.route('/notif', methods=["POST"])
 def receive_notif():
-    data = request.data
+    data = request.json
     app.logger.warning(f"{data}")
 
     return jsonify(data)
